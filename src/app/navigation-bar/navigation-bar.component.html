@@ -1,0 +1,24 @@
+<nav class="navbar-container">
+    <div class="navbar">
+        <a routerLink="/">
+            <img  class="logo" src="assets/images/icons/logo.png" alt="Alpha Club" >
+        </a>
+        <button [cdkMenuTriggerFor]="menu" mat-mini-fab aria-label="menu" color="basic" class="toggler"> 
+            <mat-icon >menu</mat-icon>
+          </button>
+          <ng-template #menu>
+
+              <ul class="links_container">
+                  <li class="link" *ngFor="let hyperlink of hyperlinks">
+                      <a [href]="hyperlink.route" *ngIf="!hyperlink.dropdown?.value; else elseBlock">{{hyperlink.name | uppercase}}</a>
+                      <ng-template #elseBlock>
+                          <a >{{hyperlink.name | uppercase}}</a>
+                        </ng-template> 
+                        <div >
+                            <a [href]="hyperlink_1.route" *ngFor="let hyperlink_1 of hyperlink.dropdown?.hyperlinks">{{hyperlink_1.name | uppercase}}</a>
+                        </div>
+                    </li>
+                </ul>
+            </ng-template>
+    </div>
+</nav>
