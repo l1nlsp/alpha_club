@@ -1,1 +1,41 @@
-<app-navigation-bar></app-navigation-bar>
+<mat-sidenav-container hasBackdrop="true">
+  <mat-sidenav-content>
+    <div class="navbar-container">
+      <nav class="navbar">
+        <a routerLink="/">
+          <img
+            class="logo"
+            src="assets/images/icons/logo.png"
+            alt="Alpha Club"
+          />
+        </a>
+        <button
+          mat-mini-fab
+          (click)="sidenav.toggle()"
+          aria-label="menu"
+          color="basic"
+          class="toggler"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+      </nav>
+    </div>
+    <app-landing></app-landing>
+  </mat-sidenav-content>
+
+  <mat-sidenav #sidenav mode="side" class="links-container" position="end">
+    <li class="link" *ngFor="let hyperlink of hyperlinks">
+      <a
+        [href]="hyperlink.route"
+        *ngIf="!hyperlink.dropdown?.value; else elseBlock"
+        >{{ hyperlink.name | uppercase }}</a
+      >
+      <ng-template #elseBlock>
+        <a>{{ hyperlink.name | uppercase }}</a>
+      </ng-template>
+      <!-- <div >
+                      <a [href]="hyperlink_1.route" *ngFor="let hyperlink_1 of hyperlink.dropdown?.hyperlinks">{{hyperlink_1.name | uppercase}}</a>
+                  </div> -->
+    </li>
+  </mat-sidenav>
+</mat-sidenav-container>
