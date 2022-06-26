@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hyperlinks } from '../Hyperlinks';
-import { Infos } from './Infos';
+import { Infos } from '../Infos';
 
 @Component({
   selector: 'app-landing',

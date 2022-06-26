@@ -1,0 +1,23 @@
+<section id="footer" class="footer-container">
+  <mat-accordion class="accordion">
+    <mat-expansion-panel *ngFor="let panel of expansionPanels">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ panel.title }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div *ngFor="let section of panel.sections">
+        <ng-template [ngIf]="section.beschreibung">
+          <h3 *ngIf="section.untertitel">{{ section.untertitel }}</h3>
+          <p *ngFor="let line of section.beschreibung">{{ line }}</p>
+          <!-- for imported content aus Infos file : 'beschreibung: string' instead of 'beschreibung':string[] -->
+          <p *ngIf="section.beschreibung[0].length === 1">
+            <!--Explanation If there is only one letter as element 0. then it is only a string, otherwise is an array -->
+            {{ section.beschreibung }}
+          </p>
+        </ng-template>
+        <a [href]="section.route" *ngIf="section.route">{{
+          section.untertitel
+        }}</a>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</section>
