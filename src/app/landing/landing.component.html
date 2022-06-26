@@ -1,1 +1,54 @@
-<p>landing works!</p>
+<section id="landing-booking-menu" class="booking-menu-container">
+  <menu class="booking-menu">
+    <a *ngFor="let option of Menu_Options" [routerLink]="option.route">{{
+      option.name + " buchen"
+    }}</a>
+  </menu>
+</section>
+<section id="landing-global-message" class="global-message-container">
+  <div class="global-message">
+    <h1>Alpha Club Aktuell</h1>
+    <hr />
+    <p>{{ message }}</p>
+  </div>
+</section>
+<section id="landing-offers" class="offers-container">
+  <div class="offers">
+    <h1>Gültig ab 01.04.2022 - Neue Preise bei unserem Ballsport-Angebot</h1>
+    <hr />
+    <!-- Mitgliedschaft -->
+    <a [href]="Hyperlinks[5].route">{{ Hyperlinks[5].name }}</a>
+    <!-- Ballsport , ! um den "possible undefined" Fehler zu beheben-->
+    <a [href]="(Hyperlinks[1].dropdown?.hyperlinks)![0].route">{{
+      (Hyperlinks[1].dropdown?.hyperlinks)![0].name
+    }}</a>
+  </div>
+</section>
+<section id="landing-book-sports" class="book-sports">
+  <div>
+    <h1>Tennis Squash Badminton</h1>
+    <a href="https://www.eversports.de/s/alpha-club-neufahrn">Buchen*</a>
+  </div>
+  <p>
+    <small
+      >*Kostenfreie Stornierungen sind bis max. 24 Std. vor Spielbeginn möglich.
+      Bei späterer Absage oder Nichterscheinen ist die volle Platzmiete zur
+      Zahlung fällig. Gebuchte Plätze können anderweitig vergeben werden, wenn
+      der Reservierende sich nicht 5 Min. vor Spielbeginn an der Rezeption
+      meldet. Mitgliederkonditionen beziehen sich ausschließlich auf das
+      Mitglied. Wird mit einem oder mehreren Nichtmitgliedern gespielt, gelten
+      die Mitgliederkonditionen anteilig für max. 50% der Spielzeit.
+      Online-Reservierungen verpflichten zur direkten Online-Zahlung über
+      Eversports ohne die Option zur Berücksichtigung von Mitgliederkonditionen
+      oder anderer Zahlungsmodalitäten wie USC oder My Fitness Card.</small
+    >
+  </p>
+</section>
+<section id="landing-kurse" class="kurse">
+  <div>
+    <h1>Alpha Club Kurse</h1>
+    <a href="https://www.alphaclub-nf.de/index.php/kursangebot"
+      >Zu den Kursen</a
+    >
+  </div>
+</section>

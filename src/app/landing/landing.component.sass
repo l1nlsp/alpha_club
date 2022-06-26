@@ -1,0 +1,96 @@
+$default_padding: 1.5em
+
+.booking-menu-container
+    background-color: #e2e2e2
+.booking-menu
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: $default_padding 0
+    a
+        @extend .anchor
+.anchor
+    width: 80%
+    // background-color: rgba(46, 46, 46, .8)
+    background-color: rgba(46, 46, 46, .9)
+    padding: 1em 1em
+    margin: .5em 0
+    text-align: center
+    border-radius: .3em
+    font-weight: 400
+    letter-spacing: .1em
+    transition: .3s ease
+    &:hover
+        background-color: #23272b
+
+.global-message-container
+    background-color: #e2e2e2
+.global-message
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: $default_padding
+    color: black
+    text-align: justify
+    h1
+        margin: .2em 0
+        text-align: center
+        font-size: 3em
+        font-weight: 400
+        text-transform: uppercase
+    hr
+        margin: 2em 0
+        width: 3em
+    p
+        margin: .2em 0
+        font-size: 1.2em
+
+.offers-container
+    background-color: white
+.offers
+    @extend .global-message
+    @extend .booking-menu
+    margin: $default_padding $default_padding 0
+    padding: 2em 0
+    h1
+        font-weight: 35
+
+.book-sports
+    div
+        @extend .booking-menu
+        justify-content: center
+        padding: $default_padding
+        height: 35em
+        background-image: url("https://res.cloudinary.com/lincolsp/image/upload/v1656235521/alpha_club/sports/tennis2_sw.jpg")
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: left
+        h1
+            font-size: 3em
+            color: #c12647
+            font-weight: 300
+            text-align: right
+    p
+        padding: $default_padding
+        small
+            line-height: 2em
+            text-align: left
+            font-size: .7em
+            font-style: italic
+            color: #333
+
+.kurse
+    div
+        background-image: url("https://res.cloudinary.com/lincolsp/image/upload/v1656238196/alpha_club/sports/kurse_sw.jpg")
+        @extend .booking-menu
+        justify-content: center
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: left
+        height: 35em
+        h1
+            text-align: center
+            width: 90%
+            font-size: 3em
+            color: #c12647
+            font-weight: 300

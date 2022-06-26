@@ -1,10 +1,13 @@
-<mat-sidenav-container hasBackdrop="true">
-  <mat-sidenav-content>
-    <div class="navbar-container">
+<mat-sidenav-container hasBackdrop="true" class="mat-sidenav-container" W>
+  <mat-sidenav-content class="global-container">
+    <div
+      [class]="{ 'navbar-container': true, nav_scrolled: scrolled }"
+      (window:scroll)="navOnScroll()"
+    >
       <nav class="navbar">
         <a routerLink="/">
           <img
-            class="logo"
+            [class]="{ logo: true, logo_animated: scrolled }"
             src="assets/images/icons/logo.png"
             alt="Alpha Club"
           />
@@ -24,7 +27,7 @@
   </mat-sidenav-content>
 
   <mat-sidenav #sidenav mode="side" class="links-container" position="end">
-    <li class="link" *ngFor="let hyperlink of hyperlinks">
+    <li class="link" *ngFor="let hyperlink of Hyperlinks">
       <a
         [href]="hyperlink.route"
         *ngIf="!hyperlink.dropdown?.value; else elseBlock"
