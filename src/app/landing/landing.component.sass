@@ -1,5 +1,5 @@
 $default_padding: 1.5em
-
+$icon_size: 2.5em
 .booking-menu-container
     background-color: #e2e2e2
 .booking-menu
@@ -94,3 +94,26 @@ $default_padding: 1.5em
             font-size: 3em
             color: #c12647
             font-weight: 300
+
+.infos
+    padding: $default_padding
+    display: flex
+    flex-direction: column
+    color: #C12647
+    font-size: $icon_size
+    padding: .5em
+    > div
+        margin: .3em 0
+        display: flex
+        .info-icon
+            font-size: 1em
+            height: 1em
+            width: 1em
+            margin-right: .5em
+        >div
+            font-size: .4em
+            .info-section
+                div
+                    color: #333
+                    p
+                        margin-left: .2em

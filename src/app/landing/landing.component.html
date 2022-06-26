@@ -9,7 +9,13 @@
   <div class="global-message">
     <h1>Alpha Club Aktuell</h1>
     <hr />
-    <p>{{ message }}</p>
+    <p>
+      Liebes Mitglied, ab dem 03.04.2022 entfallen alle Coronaeinschränkungen
+      für Dein Fitnesstraining. Keine 3 G Regelung – dennoch sind Masken, der
+      Mindestabstand zueinander und das Einhalten der allgemeinen
+      Hygienevorschriften weiterhin sehr gerne gesehen. Viel Spaß beim Training!
+      Euer Alpha Club Team
+    </p>
   </div>
 </section>
 <section id="landing-offers" class="offers-container">
@@ -50,5 +56,24 @@
     <a href="https://www.alphaclub-nf.de/index.php/kursangebot"
       >Zu den Kursen</a
     >
+  </div>
+</section>
+<section id="landing-infos" class="infos">
+  <div *ngFor="let info of Infos">
+    <mat-icon
+      aria-hidden="false"
+      [attr.aria-label]="info.titel"
+      class="info-icon"
+      >{{ info.icon }}</mat-icon
+    >
+    <div>
+      <h2>{{ info.titel }}</h2>
+      <div class="info-section" *ngIf="info.sections">
+        <div *ngFor="let section of info.sections">
+          <h3 *ngIf="section.untertitel">{{ section.untertitel }}</h3>
+          <p>{{ section.beschreibung }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
