@@ -1,6 +1,10 @@
-<section id="footer" class="footer-container">
-  <mat-accordion class="accordion">
-    <mat-expansion-panel *ngFor="let panel of expansionPanels">
+<section id="footer" class="footer-container" (load)="accordion.openAll()">
+  <mat-accordion class="accordion-section" multi>
+    <mat-expansion-panel
+      *ngFor="let panel of expansionPanels"
+      class="container expansion-panel"
+      expanded="true"
+    >
       <mat-expansion-panel-header>
         <mat-panel-title>{{ panel.title }}</mat-panel-title>
       </mat-expansion-panel-header>
@@ -20,4 +24,9 @@
       </div>
     </mat-expansion-panel>
   </mat-accordion>
+</section>
+<section id="copyright" class="copyright-container">
+  <div class="container copy-content">
+    ©{{ today | date: "y" }} Alpha Club Sportanlagen GmbH
+  </div>
 </section>

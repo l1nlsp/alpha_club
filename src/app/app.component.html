@@ -1,10 +1,10 @@
-<mat-sidenav-container hasBackdrop="true" class="mat-sidenav-container" W>
+<mat-sidenav-container hasBackdrop="true" class="mat-sidenav-container">
   <mat-sidenav-content class="global-container">
     <div
       [class]="{ 'navbar-container': true, nav_scrolled: scrolled }"
       (window:scroll)="navOnScroll()"
     >
-      <nav class="navbar">
+      <nav class="navbar container">
         <a routerLink="/">
           <img
             [class]="{ logo: true, logo_animated: scrolled }"

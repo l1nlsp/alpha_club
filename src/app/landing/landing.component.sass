@@ -1,6 +1,8 @@
 $default_padding: 1.5em
 $icon_size: 2.5em
 .booking-menu-container
+    display: flex
+    justify-content: center
     background-color: #e2e2e2
 .booking-menu
     display: flex
@@ -10,12 +12,14 @@ $icon_size: 2.5em
     a
         @extend .anchor
 .anchor
-    width: 80%
+    width: 90%
+    display: flex
     // background-color: rgba(46, 46, 46, .8)
     background-color: rgba(46, 46, 46, .9)
     padding: 1em 1em
     margin: .5em 0
     text-align: center
+    justify-content: center
     border-radius: .3em
     font-weight: 400
     letter-spacing: .1em
@@ -25,6 +29,8 @@ $icon_size: 2.5em
 
 .global-message-container
     background-color: #e2e2e2
+    display: flex
+    justify-content: center
 .global-message
     display: flex
     flex-direction: column
@@ -47,6 +53,8 @@ $icon_size: 2.5em
 
 .offers-container
     background-color: white
+    display: flex
+    justify-content: center
 .offers
     @extend .global-message
     @extend .booking-menu
@@ -56,7 +64,7 @@ $icon_size: 2.5em
         font-weight: 35
 
 .book-sports
-    div
+    .bg-with-image
         @extend .booking-menu
         justify-content: center
         padding: $default_padding
@@ -64,30 +72,39 @@ $icon_size: 2.5em
         background-image: url("https://res.cloudinary.com/lincolsp/image/upload/v1656235521/alpha_club/sports/tennis2_sw.jpg")
         background-repeat: no-repeat
         background-size: cover
-        background-position: left
-        h1
-            font-size: 3em
-            color: #c12647
-            font-weight: 300
-            text-align: right
-    p
-        padding: $default_padding
-        small
-            line-height: 2em
-            text-align: left
-            font-size: .7em
-            font-style: italic
-            color: #333
+        background-position: left top
+        >div
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+            h1
+                font-size: 3em
+                color: #c12647
+                font-weight: 300
+                text-align: right
+    .p-container
+        display: flex
+        justify-content: center
+        p
+            padding: $default_padding
+            small
+                line-height: 2em
+                text-align: left
+                font-size: .7em
+                font-style: italic
+                color: #333
 
 .kurse
+    background-image: url("https://res.cloudinary.com/lincolsp/image/upload/v1656238196/alpha_club/sports/kurse_sw.jpg")
+    justify-content: center
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: left
+    display: flex
+    align-items: center
+    height: 35em
     div
-        background-image: url("https://res.cloudinary.com/lincolsp/image/upload/v1656238196/alpha_club/sports/kurse_sw.jpg")
         @extend .booking-menu
-        justify-content: center
-        background-repeat: no-repeat
-        background-size: cover
-        background-position: left
-        height: 35em
         h1
             text-align: center
             width: 90%
@@ -95,14 +112,18 @@ $icon_size: 2.5em
             color: #c12647
             font-weight: 300
 
+.infos-container
+    display: flex
+    justify-content: center
 .infos
-    padding: $default_padding
+    padding: $default_padding 0
     display: flex
     flex-direction: column
+    align-items: center
     color: #C12647
-    font-size: $icon_size
-    padding: .5em
     > div
+        width: 100%
+        font-size: $icon_size
         margin: .3em 0
         display: flex
         .info-icon

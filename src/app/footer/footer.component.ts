@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { expansionPanels } from './Footer';
+import { MatAccordion } from '@angular/material/expansion';
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -7,7 +9,11 @@ import { expansionPanels } from './Footer';
 })
 export class FooterComponent implements OnInit {
   expansionPanels = expansionPanels;
-  constructor() {}
+  today: number = Date.now();
+  // TO start accordion opened
+  @ViewChild(MatAccordion)
+  accordion: MatAccordion = new MatAccordion();
 
+  constructor() {}
   ngOnInit(): void {}
 }
