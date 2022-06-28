@@ -1,4 +1,8 @@
+@use './media_queries' as media_queries
 /* You can add global styles to this file, and also import other style files */
+@import '~@glidejs/glide/src/assets/sass/glide.core'
+@import '~@glidejs/glide/src/assets/sass/glide.theme'
+
 body
     padding: 0
     border: 0
@@ -20,3 +24,7 @@ h1,h2,h3,h4,h5,h6
 .container
     max-width: 72em
     width: 95%
+
+@media (min-width: media_queries.$md)
+    body
+        font-size: 1.2rem

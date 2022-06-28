@@ -1,8 +1,8 @@
 <section id="landing-booking-menu" class="booking-menu-container">
   <menu class="booking-menu container">
-    <a *ngFor="let option of Menu_Options" [routerLink]="option.route">{{
-      option.name + " buchen"
-    }}</a>
+    <a *ngFor="let option of Menu_Options" [routerLink]="option.route"
+      >{{ option.name }}<br />online buchen</a
+    >
   </menu>
 </section>
 <section id="landing-global-message" class="global-message-container">
@@ -20,21 +20,28 @@
 </section>
 <section id="landing-offers" class="offers-container">
   <div class="offers container">
-    <h1>Gültig ab 01.04.2022 - Neue Preise bei unserem Ballsport-Angebot</h1>
+    <h1>
+      Gültig ab 01.04.2022 -<br />
+      Neue Preise bei unserem Ballsport-Angebot
+    </h1>
     <hr />
     <!-- Mitgliedschaft -->
-    <a [href]="Hyperlinks[5].route">{{ Hyperlinks[5].name }}</a>
-    <!-- Ballsport , ! um den "possible undefined" Fehler zu beheben-->
-    <a [href]="(Hyperlinks[1].dropdown?.hyperlinks)![0].route">{{
-      (Hyperlinks[1].dropdown?.hyperlinks)![0].name
-    }}</a>
+    <div class="offers-links">
+      <a [href]="Hyperlinks[5].route">{{ Hyperlinks[5].name }}</a>
+      <!-- Ballsport , ! um den "possible undefined" Fehler zu beheben-->
+      <a [href]="(Hyperlinks[1].dropdown?.hyperlinks)![0].route">{{
+        (Hyperlinks[1].dropdown?.hyperlinks)![0].name
+      }}</a>
+    </div>
   </div>
 </section>
 <section id="landing-book-sports" class="book-sports">
   <div class="bg-with-image">
     <div class="container">
-      <h1>Tennis Squash Badminton</h1>
-      <a href="https://www.eversports.de/s/alpha-club-neufahrn">Buchen*</a>
+      <div>
+        <h1>Tennis<br />Squash<br />Badminton</h1>
+        <a href="https://www.eversports.de/s/alpha-club-neufahrn">Buchen*</a>
+      </div>
     </div>
   </div>
   <div class="p-container">

@@ -1,3 +1,5 @@
+@use '../../media_queries' as media_queries
+
 $default_padding: 1.5em
 $icon_size: 2.5em
 .booking-menu-container
@@ -39,7 +41,8 @@ $icon_size: 2.5em
     color: black
     text-align: justify
     h1
-        margin: .2em 0
+        color: rgba(193, 38, 71, 1)
+        margin-top: .2em 0
         text-align: center
         font-size: 3em
         font-weight: 400
@@ -62,7 +65,10 @@ $icon_size: 2.5em
     padding: 2em 0
     h1
         font-weight: 35
-
+    .offers-links
+        display: flex
+        flex-direction: column
+        width: 100%
 .book-sports
     .bg-with-image
         @extend .booking-menu
@@ -138,3 +144,43 @@ $icon_size: 2.5em
                     color: #333
                     p
                         margin-left: .2em
+
+@media (min-width: media_queries.$md)
+    .booking-menu
+        flex-direction: row
+        a
+            margin-right: .5em
+            margin-left: .5em
+    .global-message
+        h1
+            font-size: 5.5em
+            font-weight: 300
+        p
+            font-size: 1.5em
+    .offers
+        flex-direction: column
+        h1
+            font-size: 1.6em
+        .offers-links
+            flex-direction: row
+    .bg-with-image
+        h1
+            font-size: 5em !important
+        a
+            margin: 1em 0 !important
+    .kurse
+        div
+            max-width: 28em
+            flex-direction: column
+            h1
+                font-size: 5.5em
+    .infos
+        flex-wrap: wrap
+        flex-direction: row
+        font-size: .9em
+        align-items: flex-start
+        >div
+            width: auto
+            margin: .5em
+            >div
+                width: 16em
