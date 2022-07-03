@@ -2,6 +2,12 @@
 
 $default_padding: 1.5em
 $icon_size: 2.5em
+$big_bg_size: 35em
+$slider_arrows_size: 3em
+
+.carousel
+    display: none
+
 .booking-menu-container
     display: flex
     justify-content: center
@@ -74,8 +80,8 @@ $icon_size: 2.5em
         @extend .booking-menu
         justify-content: center
         padding: $default_padding
-        height: 35em
-        background-image: url("https://res.cloudinary.com/lincolsp/image/upload/v1656235521/alpha_club/sports/tennis2_sw.jpg")
+        height: $big_bg_size
+        background-image: url("https://res.cloudinary.com/lincolsp/image/upload/v1656456260/alpha_club/slider/tennis2_sw.jpg")
         background-repeat: no-repeat
         background-size: cover
         background-position: left top
@@ -101,14 +107,14 @@ $icon_size: 2.5em
                 color: #333
 
 .kurse
-    background-image: url("https://res.cloudinary.com/lincolsp/image/upload/v1656238196/alpha_club/sports/kurse_sw.jpg")
+    background-image: url("https://res.cloudinary.com/lincolsp/image/upload/v1656456260/alpha_club/slider/fitness2_sw.jpg")
     justify-content: center
     background-repeat: no-repeat
     background-size: cover
     background-position: left
     display: flex
     align-items: center
-    height: 35em
+    height: $big_bg_size
     div
         @extend .booking-menu
         h1
@@ -184,3 +190,50 @@ $icon_size: 2.5em
             margin: .5em
             >div
                 width: 16em
+    .carousel
+        display: flex
+        height: $big_bg_size*1.2
+        div
+            height: $big_bg_size*1.2
+            background-repeat: none
+            background-size: cover
+            background-position: center
+            position: relative
+            display: flex
+            justify-content: center
+            h1
+                position: absolute
+                color: white
+                font-size: 3.5em
+                font-weight: 400
+                transition: .5s ease
+                opacity: 0
+                // for random text position
+            @for $i from 1 through 6
+                &:nth-child(#{$i})
+                    h1
+                        top: random()*80% !important
+                        left: random()*50% !important
+    .slider_arrow_right
+        position: absolute
+        top: 50%
+        right: 0%
+        margin-right: $slider_arrows_size/10
+        filter: invert(1)
+        font-size: $slider_arrows_size
+        height: 1em
+        width: 1em
+        opacity: .8
+        transition: .4s ease
+        cursor: pointer
+        &:hover
+            opacity: 1
+    .slider_arrow_left
+        @extend .slider_arrow_right
+        left: 0%
+        margin-right: 0
+        margin-left: $slider_arrows_size/10
+    .appear
+        h1
+            opacity: 1 !important
+            transform: scale(1.3)

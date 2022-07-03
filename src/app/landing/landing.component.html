@@ -1,3 +1,40 @@
+<section id="landing-carousel">
+  <ngx-glide
+    class="carousel"
+    type="carousel"
+    [gap]="0"
+    [autoplay]="10000"
+    [animationDuration]="500"
+    [arrowLeftTemplate]="arrow_left"
+    [arrowRightTemplate]="arrow_right"
+    [listenToEvents]="true"
+    (ranAfter)="swiped()"
+  >
+    <ng-template #arrow_left>
+      <mat-icon
+        class="slider_arrow_left"
+        aria-hidden="false"
+        aria-label="previous"
+        >arrow_circle_left</mat-icon
+      >
+    </ng-template>
+    <ng-template #arrow_right>
+      <mat-icon class="slider_arrow_right" aria-hidden="false" aria-label="next"
+        >arrow_circle_right</mat-icon
+      >
+    </ng-template>
+    <!-- this should be a div with bg-image  -->
+    <div
+      *ngFor="let i = index; let slider; of: Sliders"
+      [style.background-image]="'url(' + slider.url + ')'"
+      [class]="i === slide_index ? 'appear' : ''"
+    >
+      <div class="container">
+        <h1>{{ slider.name | uppercase }}</h1>
+      </div>
+    </div>
+  </ngx-glide>
+</section>
 <section id="landing-booking-menu" class="booking-menu-container">
   <menu class="booking-menu container">
     <a *ngFor="let option of Menu_Options" [routerLink]="option.route"
