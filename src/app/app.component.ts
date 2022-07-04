@@ -9,9 +9,9 @@ import { Hyperlinks } from './Hyperlinks';
 export class AppComponent {
   title = 'alpha_club';
   Hyperlinks = Hyperlinks;
+  scrolled: boolean = false;
 
   //window.onScroll listener for animations
-  scrolled: boolean = false;
   navOnScroll(): void {
     if (window.scrollY > 20) {
       this.scrolled = true;

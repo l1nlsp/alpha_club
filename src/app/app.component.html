@@ -21,25 +21,69 @@
         >
           <mat-icon>menu</mat-icon>
         </button>
+        <ul class="nav-links">
+          <li class="link" *ngFor="let hyperlink of Hyperlinks">
+            <a
+              [href]="hyperlink.route"
+              *ngIf="!hyperlink.dropdown?.value; else elseBlock"
+              >{{ hyperlink.name | uppercase }}</a
+            >
+            <ng-template #elseBlock mat-button>
+              <a
+                [matMenuTriggerFor]="belowMenu"
+                class="dropdown-trigger"
+                #menuTrigger="matMenuTrigger"
+              >
+                {{ hyperlink.name | uppercase }}
+                <mat-icon>expand_more</mat-icon>
+              </a>
+            </ng-template>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+              <a
+                mat-menu-item
+                [class]="{
+                  'dropdown-item': true,
+                  nav_scrolled: !scrolled
+                }"
+                [href]="hyperlink_1.route"
+                *ngFor="let hyperlink_1 of hyperlink.dropdown?.hyperlinks"
+                >{{ hyperlink_1.name | uppercase }}
+              </a>
+            </mat-menu>
+          </li>
+        </ul>
       </nav>
     </div>
     <app-landing></app-landing>
     <app-footer></app-footer>
   </mat-sidenav-content>
-
-  <mat-sidenav #sidenav mode="side" class="links-container" position="end">
-    <li class="link" *ngFor="let hyperlink of Hyperlinks">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    class="links-container fixed"
+    position="end"
+  >
+    <li class="link-sidenav" *ngFor="let hyperlink of Hyperlinks">
       <a
         [href]="hyperlink.route"
         *ngIf="!hyperlink.dropdown?.value; else elseBlock"
         >{{ hyperlink.name | uppercase }}</a
       >
-      <ng-template #elseBlock>
-        <a>{{ hyperlink.name | uppercase }}</a>
+      <ng-template #elseBlock mat-button>
+        <a [matMenuTriggerFor]="belowMenu" class="dropdown-trigger">
+          {{ hyperlink.name | uppercase }}
+          <mat-icon>expand_more</mat-icon>
+        </a>
       </ng-template>
-      <!-- <div >
-                      <a [href]="hyperlink_1.route" *ngFor="let hyperlink_1 of hyperlink.dropdown?.hyperlinks">{{hyperlink_1.name | uppercase}}</a>
-                  </div> -->
+      <mat-menu #belowMenu="matMenu" yPosition="below">
+        <a
+          mat-menu-item
+          [href]="hyperlink_1.route"
+          class="dropdown-item"
+          *ngFor="let hyperlink_1 of hyperlink.dropdown?.hyperlinks"
+          >{{ hyperlink_1.name | uppercase }}</a
+        >
+      </mat-menu>
     </li>
   </mat-sidenav>
 </mat-sidenav-container>

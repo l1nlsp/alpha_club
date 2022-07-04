@@ -21,7 +21,6 @@ export class LandingComponent implements OnInit {
 
   swiped() {
     this.slide_index = this.ngxGlide.getIndex();
-    console.log(this.slide_index);
   }
 
   constructor() {}

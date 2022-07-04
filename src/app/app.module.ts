@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
 
 //components
 import { LandingComponent } from './landing/landing.component';
@@ -27,6 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     MatSidenavModule,
     MatExpansionModule,
     NgxGlideModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

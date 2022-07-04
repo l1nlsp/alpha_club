@@ -201,6 +201,7 @@ $slider_arrows_size: 3em
             position: relative
             display: flex
             justify-content: center
+            align-items: center
             h1
                 position: absolute
                 color: white
@@ -209,16 +210,16 @@ $slider_arrows_size: 3em
                 transition: .5s ease
                 opacity: 0
                 // for random text position
-            @for $i from 1 through 6
+            @for $i from 1 through 7
                 &:nth-child(#{$i})
                     h1
                         top: random()*80% !important
-                        left: random()*50% !important
+                        left: random()*70% !important
     .slider_arrow_right
         position: absolute
         top: 50%
         right: 0%
-        margin-right: $slider_arrows_size/10
+        margin-right: calc($slider_arrows_size/10)
         filter: invert(1)
         font-size: $slider_arrows_size
         height: 1em
@@ -232,7 +233,7 @@ $slider_arrows_size: 3em
         @extend .slider_arrow_right
         left: 0%
         margin-right: 0
-        margin-left: $slider_arrows_size/10
+        margin-left: calc($slider_arrows_size/10)
     .appear
         h1
             opacity: 1 !important
